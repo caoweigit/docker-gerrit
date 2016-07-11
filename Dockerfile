@@ -11,6 +11,8 @@ ENV GERRIT_ROOT /home/gerrit/gerrit
 ENV GERRIT_USER gerrit
 ENV GERRIT_WAR /home/gerrit/gerrit.war
 
+COPY sources.list /etc/apt/sources.list
+
 RUN \
   sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
   apt-get update && \
